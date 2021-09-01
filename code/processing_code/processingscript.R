@@ -8,10 +8,11 @@
 library(readxl) #for loading Excel files
 library(dplyr) #for data processing
 library(here) #to set paths
+library(expss) #To put descriptions
 
 #path to data
 #note the use of the here() package and not absolute paths
-data_location <- here::here("data","raw_data","exampledata.xlsx")
+data_location <- here::here("data","raw_data","exampledata2.xlsx")
 
 #load data. 
 #note that for functions that come from specific packages (instead of base R)
@@ -47,10 +48,12 @@ print(rawdata)
 # this is one way of doing it. Note that if the data gets updated, 
 # we need to decide if the thresholds are ok (newborns could be <50)
 
+for (i in 1:14) {if (rawdata$Gender[i] == "M") {rawdata$Gender[i] = "Male"} else {rawdata$Gender[i] = "Female"}}
+
 processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>% 
                              dplyr::mutate(Height = as.numeric(Height)) %>% 
                              dplyr::filter(Height > 50 & Weight < 1000)
-
+                            
 # save data as RDS
 # I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. 
 # This preserves coding like factors, characters, numeric, etc. 

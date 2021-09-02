@@ -5,6 +5,7 @@
 #and saves the results to the results folder
 
 #load needed packages. make sure they are installed.
+library(tidyverse)
 library(ggplot2) #for plotting
 library(broom) #for cleaning up output from lm()
 library(here) #for data loading/saving
@@ -66,4 +67,28 @@ print(lmtable)
 table_file = here("results", "resulttable.rds")
 saveRDS(lmtable, file = table_file)
 
-  
+######
+#Contributer 3- boxplot with x= new variable and y=height
+######
+
+#Gender boxplot
+BP3<-mydata%>%
+  ggplot(aes(x=Gender, y=Height))+
+  geom_boxplot(aes(fill=Gender))
+
+plot(BP3)  
+
+figure_file = here("results","BoxPlot.png")
+ggsave(filename = figure_file, plot=BP3) 
+
+
+#Age scatterplot
+SP3<-mydata%>%
+  ggplot(aes(x=Weight, y=Age))+
+  geom_point(aes(color=Gender))+
+  geom_smooth(method='lm')
+
+plot(SP3)  
+
+figure_file = here("results","ScatterPlot.png")
+ggsave(filename = figure_file, plot=SP3) 

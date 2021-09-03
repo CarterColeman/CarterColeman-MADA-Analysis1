@@ -70,9 +70,9 @@ Figure \@ref(fig:resultfigure) shows a scatterplot figure produced with data bas
 knitr::include_graphics("../../results/ScatterPlot.png")
 ```
 
-Figure \@ref(fig:resultfigure) shows a Box plot figure produced with data based on Gender.
+Figure \@ref(fig:resultfigure1) shows a Box plot figure produced with data based on Gender.
 
-```{r resultfigure_2,  fig.cap='Box Plot of Height Distrubution between Males and Females.', echo=FALSE}
+```{r resultfigure1,  fig.cap='Box Plot of Height Distrubution between Males and Females.', echo=FALSE}
 knitr::include_graphics("../../results/BoxPlot.png")
 ```
 

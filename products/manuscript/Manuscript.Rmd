@@ -1,7 +1,7 @@
 ---
-title: "Example Manuscript Template for a Data Analysis Project"
+title: "Example Manuscript Template for Module 2 Analysis"
 subtitle: ""
-author: Andreas Handel
+author: Group 2
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: article
@@ -64,12 +64,17 @@ knitr::kable(resulttable, caption = 'Data summary table.')
 ```
 
 
-Figure \@ref(fig:resultfigure) shows a scatterplot figure produced by one of the R scripts.
+Figure \@ref(fig:resultfigure) shows a scatterplot figure produced with data based on Gender.
 
-```{r resultfigure,  fig.cap='Analysis figure.', echo=FALSE}
-knitr::include_graphics("../../results/resultfigure.png")
+```{r resultfigure,  fig.cap='Analysis the relationship between Age and Weight between Males and Females.', echo=FALSE}
+knitr::include_graphics("../../results/ScatterPlot.png")
 ```
 
+Figure \@ref(fig:resultfigure) shows a Box plot figure produced with data based on Gender.
+
+```{r resultfigure_2,  fig.cap='Box Plot of Height Distrubution between Males and Females.', echo=FALSE}
+knitr::include_graphics("../../results/BoxPlot.png")
+```
 
 ## Full analysis
 

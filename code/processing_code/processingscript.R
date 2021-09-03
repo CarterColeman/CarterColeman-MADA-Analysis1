@@ -50,6 +50,8 @@ print(rawdata)
 
 for (i in 1:14) {if (rawdata$Gender[i] == "M") {rawdata$Gender[i] = "Male"} else {rawdata$Gender[i] = "Female"}}
 
+rawdata$Gender <- as.factor(rawdata$Gender)
+
 processeddata <- rawdata %>% dplyr::filter( Height != "sixty" ) %>% 
                              dplyr::mutate(Height = as.numeric(Height)) %>% 
                              dplyr::filter(Height > 50 & Weight < 1000)
